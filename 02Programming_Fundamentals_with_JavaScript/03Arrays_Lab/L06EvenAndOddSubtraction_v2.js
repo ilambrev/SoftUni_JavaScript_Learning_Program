@@ -18,6 +18,6 @@ function evenAndOddSubstraction(arr) {
 
 }
 
-evenAndOddSubstraction([1, 2, 3, 4, 5, 6]);
-evenAndOddSubstraction([3, 5, 7, 9]);
-evenAndOddSubstraction([2, 4, 6, 8, 10]);
+// evenAndOddSubstraction([1, 2, 3, 4, 5, 6]);
+// evenAndOddSubstraction([3, 5, 7, 9]);
+// evenAndOddSubstraction([2, 4, 6, 8, 10]);
