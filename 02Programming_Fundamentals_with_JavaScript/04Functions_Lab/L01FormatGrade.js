@@ -30,6 +30,6 @@ function formatGrade(grade) {
 
 }
 
-formatGrade(3.33);
-formatGrade(4.50);
-formatGrade(2.99);
+// formatGrade(3.33);
+// formatGrade(4.50);
+// formatGrade(2.99);
