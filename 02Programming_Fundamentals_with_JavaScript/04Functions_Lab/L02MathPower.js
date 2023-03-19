@@ -10,5 +10,5 @@ function mathPower(number, power) {
 
 }
 
-mathPower(2, 8);
-mathPower(3, 4);
+// mathPower(2, 8);
+// mathPower(3, 4);
