@@ -16,6 +16,6 @@ function addAndSubstract(numOne, numTwo, numThree) {
 
 }
 
-addAndSubstract(23, 6, 10);
-addAndSubstract(1, 17, 30);
-addAndSubstract(42, 58, 100)
+// addAndSubstract(23, 6, 10);
+// addAndSubstract(1, 17, 30);
+// addAndSubstract(42, 58, 100)
