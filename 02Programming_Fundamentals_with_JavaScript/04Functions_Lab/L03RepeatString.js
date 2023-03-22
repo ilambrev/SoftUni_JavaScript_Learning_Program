@@ -6,9 +6,9 @@ function repeatString(stringToRepeat, repeatsCount) {
         output += stringToRepeat;
     }
 
-    console.log(output);
+    return output;
 
 }
 
-// repeatString("abc", 3);
-// repeatString("String", 2);
+console.log(repeatString("abc", 3));
+console.log(repeatString("String", 2));
