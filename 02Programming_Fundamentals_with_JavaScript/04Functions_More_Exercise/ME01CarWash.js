@@ -41,5 +41,5 @@ function carWash(commands) {
 
 }
 
-carWash(['soap', 'soap', 'vacuum cleaner', 'mud', 'soap', 'water']);
-carWash(["soap", "water", "mud", "mud", "water", "mud", "vacuum cleaner"]);
+// carWash(['soap', 'soap', 'vacuum cleaner', 'mud', 'soap', 'water']);
+// carWash(["soap", "water", "mud", "mud", "water", "mud", "vacuum cleaner"]);
