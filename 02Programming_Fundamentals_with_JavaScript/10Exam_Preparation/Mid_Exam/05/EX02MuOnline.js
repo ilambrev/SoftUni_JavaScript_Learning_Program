@@ -49,7 +49,6 @@ function muOnline(input) {
 
                 }
 
-
                 break;
         }
 
