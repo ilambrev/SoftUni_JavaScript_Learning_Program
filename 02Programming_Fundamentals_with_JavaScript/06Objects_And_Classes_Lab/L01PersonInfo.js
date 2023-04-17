@@ -6,5 +6,5 @@ function personInfo(firstNameParam, lastNameParam, ageParam) {
 
 }
 
-personInfo("Peter", "Pan", "20");
-personInfo("George", "Smith", "18")
+// personInfo("Peter", "Pan", "20");
+// personInfo("George", "Smith", "18")
