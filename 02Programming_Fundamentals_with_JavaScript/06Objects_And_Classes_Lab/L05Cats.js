@@ -1,18 +1,25 @@
 function cats(cats) {
 
-    for (let c of cats) {
+    class Cat {
 
-        let catDetails = c.split(' ');
+        constructor(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        meow() {
+            console.log(`${this.name}, age ${this.age} says Meow`);
+        }
+
+    }
+
+    for (let catInfo of cats) {
+
+        let catDetails = catInfo.split(' ');
         let name = catDetails[0];
         let age = Number(catDetails[1]);
 
-        let cat = {
-            name: name,
-            age: age,
-            meow() {
-                console.log(`${this.name}, age ${this.age} says Meow`);
-            }
-        }
+        let cat = new Cat(name, age);
 
         cat.meow();
 
