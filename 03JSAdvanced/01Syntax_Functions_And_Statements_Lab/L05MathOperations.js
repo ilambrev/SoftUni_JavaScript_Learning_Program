@@ -13,5 +13,5 @@ function mathOperations(firstNum, secondNum, operator) {
 
 }
 
-mathOperations(5, 6, '+');
-mathOperations(3, 5.5, '*');
+// mathOperations(5, 6, '+');
+// mathOperations(3, 5.5, '*');
