@@ -1,7 +1,7 @@
 function stringLength(...input) {
 
     let totalLength = input.reduce((acc, curr) => acc += curr.length, 0);
-    let averageLength = Math.round(totalLength / input.length);
+    let averageLength = Math.floor(totalLength / input.length);
 
     console.log(`${totalLength}\n${averageLength}`);
 
