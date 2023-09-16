@@ -14,6 +14,7 @@ function constructionCrew(worker) {
     return worker;
 }
 
+/*
 console.log(constructionCrew({
     weight: 80,
     experience: 1,
@@ -32,3 +33,4 @@ console.log(constructionCrew({
     levelOfHydrated: 0,
     dizziness: false
 }));
+*/
