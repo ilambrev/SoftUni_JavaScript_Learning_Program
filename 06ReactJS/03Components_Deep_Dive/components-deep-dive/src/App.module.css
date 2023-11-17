@@ -1,0 +1,17 @@
+.unordered-list {
+    padding-left: 0px;
+}
+
+.list-item {
+    display: inline;
+    list-style: none;
+    color: blue;
+    background-color: cadetblue;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+.list-item:hover {
+    background-color: aquamarine;
+    cursor: pointer;
+}
