@@ -12,9 +12,6 @@ const UserList = () => {
             {/* <!-- Table component --> */}
             <UserListTable />
 
-            {/* < !--New user button-- > */}
-            <button className="btn-add btn">Add new user</button>
-
         </section >
 
     );
