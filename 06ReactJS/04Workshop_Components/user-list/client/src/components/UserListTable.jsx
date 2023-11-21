@@ -2,10 +2,13 @@ import { useEffect, useState } from "react";
 import * as userService from "../services/userService";
 import UserListItem from "./UserListItem";
 import CreateUserModal from "./CreateUserModal";
+import UserInfoModal from "./UserInfoModal";
 
 const UserListTable = () => {
     const [users, setUsers] = useState([]);
     const [showCreate, setShowCreate] = useState(false);
+    const [showInfo, setShowInfo] = useState(false);
+    const [selectedUser, setSelectedUser] = useState(null);
 
     console.log(users);
 
@@ -35,10 +38,22 @@ const UserListTable = () => {
         setShowCreate(false);
     };
 
+    const showInfoHandler = async (userId) => {
+        setSelectedUser(userId);
+
+        setShowInfo(true);
+    };
+
+    const hideShowInfoModal = () => {
+        setShowInfo(false);
+    };
+
     return (
 
         <div className="table-wrapper">
-            {showCreate && <CreateUserModal onClose={hideCreateUserModal} onUserCreate={userCreateHandler} />}
+            {showCreate && <CreateUserModal onClose={hideCreateUserModal} onCreate={userCreateHandler} />}
+
+            {showInfo && <UserInfoModal onClose={hideShowInfoModal} userId={selectedUser} />}
 
             <table className="table">
                 <thead>
@@ -100,13 +115,14 @@ const UserListTable = () => {
                     {users.map(user => (
                         <UserListItem
                             key={user._id}
+                            userId={user._id}
                             firstName={user.firstName}
                             lastName={user.lastName}
                             email={user.email}
                             phoneNumber={user.phoneNumber}
                             createdAt={user.createdAt}
-                            updatedAt={user.updatedAt}
                             imageUrl={user.imageUrl}
+                            onShowInfo={showInfoHandler}
                         />
                     ))}
                 </tbody>

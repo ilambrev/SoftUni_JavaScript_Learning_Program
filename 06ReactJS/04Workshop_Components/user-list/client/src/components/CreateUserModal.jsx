@@ -1,4 +1,4 @@
-const CreateUserModal = ({ onClose, onUserCreate }) => {
+const CreateUserModal = ({ onClose, onCreate }) => {
     return (
 
         // <!-- Create/Edit Form component -->
@@ -17,7 +17,7 @@ const CreateUserModal = ({ onClose, onUserCreate }) => {
                             </svg>
                         </button>
                     </header>
-                    <form onSubmit={onUserCreate}>
+                    <form onSubmit={onCreate}>
                         <div className="form-row">
                             <div className="form-group">
                                 <label htmlFor="firstName">First name</label>

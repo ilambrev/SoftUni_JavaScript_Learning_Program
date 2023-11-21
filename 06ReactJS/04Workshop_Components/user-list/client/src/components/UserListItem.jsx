@@ -1,14 +1,20 @@
 import { formatDate } from "../utils/dataUtils";
 
 const UserListItem = ({
+    userId,
     firstName,
     lastName,
     email,
     phoneNumber,
     createdAt,
-    updatedAt,
     imageUrl,
+    onShowInfo,
 }) => {
+
+    const showInfoHandler = () => {
+        onShowInfo(userId);
+    };
+
     return (
 
         <tr>
@@ -40,7 +46,7 @@ const UserListItem = ({
                         </path>
                     </svg>
                 </button>
-                <button className="btn info-btn" title="Info">
+                <button className="btn info-btn" title="Info" onClick={showInfoHandler}>
                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info"
                         className="svg-inline--fa fa-info" role="img" xmlns="http://www.w3.org/2000/svg"
                         viewBox="-150 0 512 612">
