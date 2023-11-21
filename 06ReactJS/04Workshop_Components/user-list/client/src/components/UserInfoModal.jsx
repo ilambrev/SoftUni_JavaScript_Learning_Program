@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import * as userService from "../services/userService";
-import { formatDate, formatDateWithDayName } from "../utils/dataUtils";
+import { formatDateWithDayName } from "../utils/dataUtils";
 
 const UserInfoModal = ({ userId, onClose }) => {
 
@@ -13,13 +13,13 @@ const UserInfoModal = ({ userId, onClose }) => {
 
     return (
 
-        // <!-- User details component  -->
+        // User details component
         <div className="overlay">
             <div className="backdrop" onClick={onClose}></div>
             <div className="modal">
                 <div className="detail-container">
                     <header className="headers">
-                        <h2>User Detail</h2>
+                        <h2>User Details</h2>
                         <button className="btn close" onClick={onClose}>
                             <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark"
                                 className="svg-inline--fa fa-xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
@@ -39,6 +39,7 @@ const UserInfoModal = ({ userId, onClose }) => {
                             <p>Full Name: <strong>{userDetails.firstName} {userDetails.lastName}</strong></p>
                             <p>Email: <strong>{userDetails.email}</strong></p>
                             <p>Phone Number: <strong>{userDetails.phoneNumber}</strong></p>
+                            {/* Optional chaining with ? */}
                             <p>Address: <strong>{userDetails.address?.country}, {userDetails.address?.city}, {userDetails.address?.street} {userDetails.address?.streetNumber}</strong></p>
                             <p>Created on: <strong>{formatDateWithDayName(userDetails.createdAt)}</strong></p>
                             <p>Modified on: <strong>{formatDateWithDayName(userDetails.updatedAt)}</strong></p>

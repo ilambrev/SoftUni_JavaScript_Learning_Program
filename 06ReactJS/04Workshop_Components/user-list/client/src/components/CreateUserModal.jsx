@@ -1,7 +1,7 @@
 const CreateUserModal = ({ onClose, onCreate }) => {
     return (
 
-        // <!-- Create/Edit Form component -->
+        // Create/Edit Form component
         <div className="overlay">
             <div className="backdrop" onClick={onClose}></div>
             <div className="modal">

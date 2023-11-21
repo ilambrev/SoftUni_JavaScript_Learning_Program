@@ -14,7 +14,7 @@ const Search = () => {
             </h2>
             <div className="search-input-container">
                 <input type="text" placeholder="Please, select the search criteria" name="search" />
-                {/* <!-- Show the clear button only if input field length !== 0 --> */}
+                {/* Show the clear button only if input field length !== 0 */}
                 <button className="btn close-btn">
                     <i className="fa-solid fa-xmark"></i>
                 </button>

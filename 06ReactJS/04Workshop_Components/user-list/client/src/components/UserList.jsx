@@ -6,10 +6,10 @@ const UserList = () => {
 
         <section className="card users-container">
 
-            {/* <!-- Search bar component --> */}
+            {/* Search bar component */}
             <Search />
 
-            {/* <!-- Table component --> */}
+            {/* Table component */}
             <UserListTable />
 
         </section >
