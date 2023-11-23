@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const formInitialState = {
     username: '',
@@ -10,8 +10,24 @@ const formInitialState = {
     running: false,
 };
 
-export default function ControlledForm() {
+export default function ControlledForm({ formRef }) {
+    const usernameInputRef = useRef();
+    const isMountedRef = useRef(false);
     const [formValues, setFormValues] = useState(formInitialState);
+
+    useEffect(() => {
+        usernameInputRef.current.focus();
+    }, []);
+
+    // Executes only on update
+    useEffect(() => {
+        if (!isMountedRef.current) {
+            isMountedRef.current = true;
+            return;
+        }
+
+        console.log('Form is updated');
+    }, [formValues]);
 
     const changeHandler = (e) => {
         let value = '';
@@ -53,10 +69,11 @@ export default function ControlledForm() {
 
             <h1>Controlled Form</h1>
 
-            <form onSubmit={submitHandler}>
+            <form ref={formRef} onSubmit={submitHandler}>
                 <div>
                     <label htmlFor="username">Username: </label>
                     <input
+                        ref={usernameInputRef}
                         type="text"
                         name="username"
                         id="username"
