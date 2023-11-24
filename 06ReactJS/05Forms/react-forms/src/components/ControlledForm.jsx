@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import styles from './ControlledForm.module.css'
 
 const formInitialState = {
     username: '',
@@ -14,6 +15,7 @@ export default function ControlledForm({ formRef }) {
     const usernameInputRef = useRef();
     const isMountedRef = useRef(false);
     const [formValues, setFormValues] = useState(formInitialState);
+    const [errors, setErrors] = useState({});
 
     useEffect(() => {
         usernameInputRef.current.focus();
@@ -62,6 +64,25 @@ export default function ControlledForm({ formRef }) {
 
     const resetFormHandler = () => {
         setFormValues(formInitialState);
+        setErrors({});
+    };
+
+    const ageValidator = (e) => {
+        if (formValues.age < 0 || formValues.age > 120) {
+            setErrors(state => ({
+                ...state,
+                age: 'Age shoud be between 0 and 120!',
+            }));
+
+
+        } else {
+            if (errors.age) {
+                setErrors(state => ({
+                    ...state,
+                    age: '',
+                }));
+            }
+        }
     };
 
     return (
@@ -99,7 +120,12 @@ export default function ControlledForm({ formRef }) {
                         id="age"
                         value={formValues.age}
                         onChange={changeHandler}
+                        onBlur={ageValidator}
+                        className={errors.age && styles.inputError}
                     />
+                    {errors.age && (
+                        <p className={styles.errorMessage}>{errors.age}</p>
+                    )}
                 </div>
 
 
@@ -122,7 +148,7 @@ export default function ControlledForm({ formRef }) {
                 </div>
 
                 <div>
-                    <button>Register</button>
+                    <button disabled={Object.values(errors).some(x => x)}>Register</button>
                     <button type="button" onClick={resetFormHandler}>Reset</button>
                 </div>
             </form>
