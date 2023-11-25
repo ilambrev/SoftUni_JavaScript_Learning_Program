@@ -1,0 +1,4 @@
+.characterList {
+    display: flex;
+    gap: 20px;
+}
