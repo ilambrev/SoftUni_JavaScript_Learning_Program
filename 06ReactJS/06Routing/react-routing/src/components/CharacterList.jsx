@@ -8,11 +8,17 @@ const CharacterList = () => {
     const [characters, setCharacters] = useState([]);
 
     useEffect(() => {
-        fetch(`${BASE_URL}/people`)
+        const abortController = new AbortController();
+
+        fetch(`${BASE_URL}/people`, { signal: abortController.signal })
             .then(res => res.json())
             .then(data => {
                 setCharacters(data.results);
             })
+
+        return () => {
+            abortController.abort();
+        }
     }, []);
 
     return (

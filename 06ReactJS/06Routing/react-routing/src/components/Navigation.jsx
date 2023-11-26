@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -25,10 +25,10 @@ const Navigation = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link as={Link} to="/">Home</Nav.Link>
-                        <Nav.Link as={Link} to="/about">About</Nav.Link>
-                        <Nav.Link as={Link} to="/contacts">Contacts</Nav.Link>
-                        <Nav.Link as={Link} to="/characters">Characters</Nav.Link>
+                        <Nav.Link as={NavLink} style={({isActive}) => isActive ? { backgroundColor: 'white', color: 'red'  } : {}} to="/">Home</Nav.Link>
+                        <Nav.Link as={NavLink} style={({isActive}) => isActive ? { backgroundColor: 'white', color: 'red' } : {}} to="/about">About</Nav.Link>
+                        <Nav.Link as={NavLink} style={({isActive}) => isActive ? { backgroundColor: 'white', color: 'red' } : {}} to="/contacts">Contacts</Nav.Link>
+                        <Nav.Link as={NavLink} style={({isActive}) => isActive ? { backgroundColor: 'white', color: 'red' } : {}} to="/characters">Characters</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

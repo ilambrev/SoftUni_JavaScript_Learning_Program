@@ -1,4 +1,16 @@
+import { useEffect } from "react";
+
 const Contacts = () => {
+    useEffect(() => {
+        const timeotId = setTimeout(() => {
+            console.log('2 seconds');
+        }, 200);
+
+        return () => {
+            clearTimeout(timeotId);
+        }
+    }, []);
+
     return (
         <>
             <h2>Contact Page</h2>
