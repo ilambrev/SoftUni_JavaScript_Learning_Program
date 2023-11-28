@@ -10,8 +10,6 @@ export default function GameList() {
             .then(result => setGames(result));
     }, []);
 
-    console.log(games);
-
     return (
 
         <section id="catalog-page">
