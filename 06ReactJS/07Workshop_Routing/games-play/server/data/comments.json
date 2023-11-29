@@ -1,0 +1,14 @@
+{
+    "26d88b06-68a5-4636-b28f-9c8faacdfe4c": {
+        "gameId": "98de0347-9852-4bf9-98ac-130d5bc8c903",
+        "username": "admin",
+        "text": "Very interesting game!",
+        "_id": "26d88b06-68a5-4636-b28f-9c8faacdfe4c"
+    },
+    "f5e4e247-b907-47a3-b186-6bc2e8548894": {
+        "gameId": "f45020e0-398d-4f6d-8f44-c506aa8c84d6",
+        "username": "johnnie",
+        "text": "My favorite game!",
+        "_id": "f5e4e247-b907-47a3-b186-6bc2e8548894"
+    }
+}
