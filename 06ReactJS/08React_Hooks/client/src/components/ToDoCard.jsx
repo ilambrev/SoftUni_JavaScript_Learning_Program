@@ -8,7 +8,7 @@ const ToDoCard = ({
     title,
     isFinished,
 }) => {
-    const { onTodoDeleteClick } = useContext(TodoContext);
+    const { onTodoDeleteClick, onTodoChangeStateClick } = useContext(TodoContext);
 
     return (
 
@@ -17,7 +17,7 @@ const ToDoCard = ({
                 <Card.Title>{title}</Card.Title>
                 <Card.Text>State: {isFinished === true ? 'Completed' : 'In Progress'}</Card.Text>
                 <div style={{ display: "flex", justifyContent: "space-between" }}>
-                    <Button variant="primary">Change State</Button>
+                    <Button variant="primary" onClick={() => onTodoChangeStateClick(_id, title, isFinished)}>Change State</Button>
                     <Button variant="dark" onClick={() => onTodoDeleteClick(_id)}>X</Button>
                 </div>
             </Card.Body>

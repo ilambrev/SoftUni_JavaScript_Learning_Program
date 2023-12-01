@@ -48,8 +48,30 @@ function App() {
         setTodos(state => state.filter(x => x._id !== todoId));
     };
 
+    const onTodoChangeStateClick = async (todoId, title, isFinished) => {
+
+        const response = await fetch(`${BASE_URL}/${todoId}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ title, isFinished: !isFinished, _id: todoId }),
+        });
+
+        setTodos(state => state.reduce((acc, curr) => {
+            if (curr._id === todoId) {
+                curr.isFinished = !curr.isFinished;
+            };
+
+            acc.push(curr);
+
+            return acc;
+        }, []));
+    };
+
     const contextValue = {
-        onTodoDeleteClick
+        onTodoDeleteClick,
+        onTodoChangeStateClick,
     };
 
     return (
