@@ -48,14 +48,20 @@ function App() {
         setTodos(state => state.filter(x => x._id !== todoId));
     };
 
+    const contextValue = {
+        onTodoDeleteClick
+    };
+
     return (
-        <>
-            <Header />
+        <TodoContext.Provider value={contextValue}>
+            <div>
+                <Header />
 
-            <CardContainer todos={todos} onTodoAddClick={onTodoAddClick} onTodoDeleteClick={onTodoDeleteClick} />
+                <CardContainer todos={todos} onTodoAddClick={onTodoAddClick} />
 
-            <AddTodoModal show={showAddTodo} onTodoAddSubmit={onTodoAddSubmit} onTodoAddClose={onTodoAddClose} />
-        </>
+                <AddTodoModal show={showAddTodo} onTodoAddSubmit={onTodoAddSubmit} onTodoAddClose={onTodoAddClose} />
+            </div>
+        </TodoContext.Provider>
     )
 };
 

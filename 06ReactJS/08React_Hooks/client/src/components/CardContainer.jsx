@@ -4,7 +4,6 @@ import Button from 'react-bootstrap/Button';
 const CardContainer = ({
     todos,
     onTodoAddClick,
-    onTodoDeleteClick,
 }) => {
 
     return (
@@ -12,7 +11,7 @@ const CardContainer = ({
         <div style={{ display: "flex", flexDirection: "column", gap: "20px", margin: "20px" }}>
 
             <div style={{ display: "flex", gap: "20px", margin: "auto" }}>
-                {todos.map(item => <ToDoCard key={item._id} {...item} onTodoDeleteClick={onTodoDeleteClick} />)}
+                {todos.map(item => <ToDoCard key={item._id} {...item} />)}
             </div>
 
             <div style={{ display: "flex", margin: "auto" }}>
