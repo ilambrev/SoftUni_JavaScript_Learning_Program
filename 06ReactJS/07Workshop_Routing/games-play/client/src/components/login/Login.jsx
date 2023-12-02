@@ -2,10 +2,17 @@ import { useForm } from "../../hooks/useForm";
 
 import { Link } from "react-router-dom";
 
-export default function Login() {
-    const { values, onChange, onSubmit } = useForm({
-        email: '',
-        password: '',
+const LOGIN_FORM_KEYS = {
+    EMAIL: 'email',
+    PASSWORD: 'password',
+};
+
+export default function Login({
+    loginSubmitHandler,
+}) {
+    const { values, onChange, onSubmit } = useForm(loginSubmitHandler, {
+        [LOGIN_FORM_KEYS.EMAIL]: '',
+        [LOGIN_FORM_KEYS.PASSWORD]: '',
     });
 
     return (
@@ -23,18 +30,18 @@ export default function Login() {
                         name="email"
                         placeholder="Sokka@gmail.com"
                         onChange={onChange}
-                        value={values.email}
+                        value={values[LOGIN_FORM_KEYS.EMAIL]}
                     />
 
-                    <label for="login-pass">Password:</label>
+                    <label htmlFor="login-pass">Password:</label>
                     <input
                         type="password"
                         id="login-password"
                         name="password"
                         onChange={onChange}
-                        value={values.password}
+                        value={values[LOGIN_FORM_KEYS.PASSWORD]}
                     />
-                    <input type="submit" class="btn submit" value="Login" />
+                    <input type="submit" className="btn submit" value="Login" />
                     <p className="field">
                         <span>If you don't have profile click <Link to="/register">here</Link></span>
                     </p>
