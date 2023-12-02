@@ -8,6 +8,7 @@ import GameCreate from "./components/game-create/GameCreate";
 import Login from "./components/login/Login";
 import Register from "./components/register/Register";
 import GameDetails from "./components/game-details/GameDatails";
+import AuthContext from "./contexts/AuthContext";
 
 
 
@@ -19,22 +20,24 @@ function App() {
     };
 
     return (
-        <div id="box">
-            <Header />
+        <AuthContext.Provider value={loginSubmitHandler}>
+            <div id="box">
+                <Header />
 
-            <Routes>
+                <Routes>
 
-                <Route path="/" element={<Home />} />
-                <Route path="/games" element={<GameList />} />
-                <Route path="/games/create" element={<GameCreate />} />
+                    <Route path="/" element={<Home />} />
+                    <Route path="/games" element={<GameList />} />
+                    <Route path="/games/create" element={<GameCreate />} />
 
-                <Route path="/login" element={<Login loginSubmitHandler={loginSubmitHandler} />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="/games/:gameId" element={<GameDetails />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/register" element={<Register />} />
+                    <Route path="/games/:gameId" element={<GameDetails />} />
 
-            </Routes>
+                </Routes>
 
-        </div>
+            </div>
+        </AuthContext.Provider>
     );
 };
 
