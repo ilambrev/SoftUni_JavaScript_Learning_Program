@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import * as gameService from "../../services/gameService";
 import * as commentService from "../../services/commentService";
+import AuthContext from "../../contexts/AuthContext";
 
 const commentFormInitialState = {
     username: '',
@@ -10,6 +11,7 @@ const commentFormInitialState = {
 };
 
 export default function GameDetails() {
+    const { email } = useContext(AuthContext);
     const [game, setGame] = useState({});
     const [commentFormValues, setCommentFormValues] = useState(commentFormInitialState);
     const [comments, setComments] = useState([]);
@@ -28,11 +30,10 @@ export default function GameDetails() {
 
         const newComment = await commentService.create(
             gameId,
-            commentFormValues.username,
             commentFormValues.comment,
         );
 
-        setComments(state => [...state, newComment]);
+        setComments(state => [...state, { ...newComment, owner: { email } }]);
         resetCommentFormHandler();
     };
 
@@ -67,9 +68,9 @@ export default function GameDetails() {
                 <div className="details-comments">
                     <h2>Comments:</h2>
                     <ul>
-                        {comments.map(({ _id, username, text }) => (
+                        {comments.map(({ _id, text, owner: { email } }) => (
                             <li key={_id} className="comment">
-                                <p>{username}: {text}</p>
+                                <p>{email}: {text}</p>
                             </li>
                         ))}
                     </ul>
@@ -89,13 +90,6 @@ export default function GameDetails() {
             <article className="create-comment">
                 <label>Add new comment:</label>
                 <form itemID="comment-form" className="form" onSubmit={addCommentHandler}>
-                    <input
-                        type="text"
-                        name="username"
-                        placeholder="username"
-                        value={commentFormValues.username}
-                        onChange={changeHandler}
-                    />
                     <textarea
                         name="comment"
                         placeholder="Comment......"
