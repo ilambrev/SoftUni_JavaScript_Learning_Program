@@ -3,6 +3,7 @@ import AuthContext from "../../contexts/AuthContext";
 import { useForm } from "../../hooks/useForm";
 
 const RegisterFormKeys = {
+    Username: 'username',
     Email: 'email',
     Password: 'password',
     ConfirmPassword: 'confirm-password',
@@ -11,6 +12,7 @@ const RegisterFormKeys = {
 export default function Register() {
     const { registerSubmitHandler } = useContext(AuthContext);
     const { values, onChange, onSubmit } = useForm(registerSubmitHandler, {
+        [RegisterFormKeys.Username]: '',
         [RegisterFormKeys.Email]: '',
         [RegisterFormKeys.Password]: '',
         [RegisterFormKeys.ConfirmPassword]: '',
@@ -23,6 +25,16 @@ export default function Register() {
                 <div className="container">
                     <div className="brand-logo"></div>
                     <h1>Register</h1>
+
+                    <label htmlFor="username">Username:</label>
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="johnnie"
+                        onChange={onChange}
+                        value={values[RegisterFormKeys.Username]}
+                    />
 
                     <label htmlFor="email">Email:</label>
                     <input
