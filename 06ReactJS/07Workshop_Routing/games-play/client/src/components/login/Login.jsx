@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import { useForm } from "../../hooks/useForm";
-
 import { Link } from "react-router-dom";
+
+import { useForm } from "../../hooks/useForm";
 import AuthContext from "../../contexts/AuthContext";
 
 const LOGIN_FORM_KEYS = {
