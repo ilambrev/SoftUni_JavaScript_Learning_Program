@@ -1,7 +1,13 @@
-export default function Home() {
+import withAuth from "../../HOC/withAuth";
+
+function Home({
+    username,
+}) {
     return (
 
         <section id="welcome-world">
+
+            <h1 style={{color: "white"}}>WELCOME {username}</h1>
 
             <div className="welcome-message">
                 <h2>ALL new games are</h2>
@@ -55,3 +61,5 @@ export default function Home() {
 
     );
 };
+
+export default withAuth(Home);
