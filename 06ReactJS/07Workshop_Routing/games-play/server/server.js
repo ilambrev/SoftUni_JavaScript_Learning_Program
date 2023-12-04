@@ -1339,6 +1339,32 @@
     	}
     };
     var seedData = {
+        games: {
+            "bb1f754b-1eb2-4aa2-8c48-06266b2bf7ea": {
+                "title": "Cover Fire",
+                "category": "Shooter",
+                "maxLevel": "34",
+                "imageUrl": "https://cdn.mobygames.com/covers/11018970-cover-fire-nintendo-switch-front-cover.jpg",
+                "summary": "The Cover Fire Shooting Games Sniper FPS app allows you to be in charge of troops who are fighting against other humans or zombies. The game allows you to switch between first-person and third-person perspectives. In the game, you have to become the best leader for your troops and have a keen eye for sniper shooting.",
+                "_id": "bb1f754b-1eb2-4aa2-8c48-06266b2bf7ea"
+            },
+            "98de0347-9852-4bf9-98ac-130d5bc8c903": {
+                "title": "Minecraft",
+                "category": "Adventure",
+                "maxLevel": "97",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png",
+                "summary": "In Minecraft, players explore a blocky, procedurally generated, three-dimensional world with virtually infinite terrain. Players can discover and extract raw materials, craft tools and items, and build structures, earthworks, and machines.",
+                "_id": "98de0347-9852-4bf9-98ac-130d5bc8c903"
+            },
+            "f45020e0-398d-4f6d-8f44-c506aa8c84d6": {
+                "title": "Need for Speed: Porsche Unleashed",
+                "category": "Racing Simulation",
+                "maxLevel": "45",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/en/a/af/Need_for_Speed_-_Porsche_Unleashed_Coverart.png",
+                "summary": "Need for Speed: Porsche Unleashed gives the player the opportunity to race Porsche cars (including 3 race cars) throughout a range of tracks located in Europe.",
+                "_id": "f45020e0-398d-4f6d-8f44-c506aa8c84d6"
+            }
+        },
     	recipes: {
     		"3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
