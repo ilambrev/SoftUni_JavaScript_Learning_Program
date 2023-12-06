@@ -4,27 +4,16 @@ import { useParams } from "react-router-dom";
 import * as gameService from "../../services/gameService";
 import * as commentService from "../../services/commentService";
 import AuthContext from "../../contexts/AuthContext";
+import reducer from "./commentReducer";
+import { useForm } from "../../hooks/useForm";
 
 const commentFormInitialState = {
-    username: '',
     comment: '',
-};
-
-const reducer = (state, action) => {
-    switch (action?.type) {
-        case 'GET_ALL_COMMENTS':
-            return [...action.payload];
-        case 'ADD_COMMENT':
-            return [...state, action.payload];
-        default:
-            return state;
-    }
 };
 
 export default function GameDetails() {
     const { email } = useContext(AuthContext);
     const [game, setGame] = useState({});
-    const [commentFormValues, setCommentFormValues] = useState(commentFormInitialState);
     const [comments, dispatch] = useReducer(reducer, []);
     const { gameId } = useParams();
 
@@ -41,12 +30,11 @@ export default function GameDetails() {
             });
     }, [gameId]);
 
-    const addCommentHandler = async (e) => {
-        e.preventDefault();
+    const addCommentHandler = async (values) => {
 
         const newComment = await commentService.create(
             gameId,
-            commentFormValues.comment,
+            values.comment,
         );
 
         newComment.owner = { email };
@@ -59,17 +47,10 @@ export default function GameDetails() {
         resetCommentFormHandler();
     };
 
-    const changeHandler = (e) => {
-        let value = e.target.value
-
-        setCommentFormValues(state => ({
-            ...state,
-            [e.target.name]: value,
-        }));
-    };
+    const { values, onChange, onSubmit } = useForm(addCommentHandler, commentFormInitialState);
 
     const resetCommentFormHandler = () => {
-        setCommentFormValues(commentFormInitialState);
+        values.comment = commentFormInitialState.comment;
     };
 
     return (
@@ -102,21 +83,20 @@ export default function GameDetails() {
                     )}
                 </div>
 
-                {/* <!-- Edit/Delete buttons ( Only for creator of this game )  -->
-                <div className="buttons">
-                    <a href="#" class="button">Edit</a>
-                    <a href="#" class="button">Delete</a>
+                {/* <div className="buttons">
+                    <a href="#" className="button">Edit</a>
+                    <a href="#" className="button">Delete</a>
                 </div> */}
             </div>
 
             <article className="create-comment">
                 <label>Add new comment:</label>
-                <form itemID="comment-form" className="form" onSubmit={addCommentHandler}>
+                <form itemID="comment-form" className="form" onSubmit={onSubmit}>
                     <textarea
                         name="comment"
                         placeholder="Comment......"
-                        value={commentFormValues.comment}
-                        onChange={changeHandler}
+                        value={values.comment}
+                        onChange={onChange}
                     >
                     </textarea>
                     <input className="btn submit" type="submit" value="Add Comment" />
