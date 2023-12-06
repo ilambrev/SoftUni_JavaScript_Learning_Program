@@ -12,7 +12,7 @@ const commentFormInitialState = {
 };
 
 export default function GameDetails() {
-    const { email } = useContext(AuthContext);
+    const { email, userId } = useContext(AuthContext);
     const [game, setGame] = useState({});
     const [comments, dispatch] = useReducer(reducer, []);
     const { gameId } = useParams();
@@ -83,10 +83,13 @@ export default function GameDetails() {
                     )}
                 </div>
 
-                {/* <div className="buttons">
-                    <a href="#" className="button">Edit</a>
-                    <a href="#" className="button">Delete</a>
-                </div> */}
+                {userId === game._ownerId && (
+                    <div className="buttons">
+                        <a href="#" className="button">Edit</a>
+                        <a href="#" className="button">Delete</a>
+                    </div>
+                )}
+
             </div>
 
             <article className="create-comment">
