@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 import * as gameService from "../../services/gameService";
+import Path from "../../paths";
 
 export default function GameCreate() {
     const navigate = useNavigate();
@@ -14,7 +15,7 @@ export default function GameCreate() {
         try {
             await gameService.create(gameData);
 
-            navigate("/games");
+            navigate(Path.Games);
 
         } catch (err) {
             console.log(err);
