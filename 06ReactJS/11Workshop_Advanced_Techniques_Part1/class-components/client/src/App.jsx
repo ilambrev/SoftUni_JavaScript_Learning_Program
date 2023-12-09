@@ -70,6 +70,9 @@ class App extends React.Component {
             todos: [],
             name: 'Todo List',
         }
+
+        this.toggleTodo = this.toggleTodo.bind(this);
+        this.deleteTodo = this.deleteTodo.bind(this);
     }
 
     componentDidMount() {
@@ -83,14 +86,27 @@ class App extends React.Component {
             });
     }
 
+    toggleTodo(todoId) {
+        this.setState({
+            todos: this.state.todos.map(todo => todo._id === todoId ? { ...todo, isFinished: !todo.isFinished } : todo)
+        });
+    }
+
+    deleteTodo(todoId) {
+        this.setState({
+            todos: this.state.todos.filter(todo => todo._id != todoId)
+        });
+    }
+
     render() {
         return (
             <>
                 <Menu mode="horizontal" items={items} />
 
-                <h1 style={{ textAlign: "center"}}>{this.state.name}</h1>
+                <h1 style={{ textAlign: "center" }}>{this.state.name}</h1>
 
-                <TodoList todos={this.state.todos} />
+                {/* <TodoList todos={this.state.todos} toggleTodo={this.toggleTodo.bind(this)} /> */}
+                <TodoList todos={this.state.todos} toggleTodo={this.toggleTodo} deleteTodo={this.deleteTodo} />
             </>
 
         );
