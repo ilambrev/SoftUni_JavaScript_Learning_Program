@@ -7,15 +7,24 @@ import Path from "../../paths";
 
 export default function Logout() {
     const navigate = useNavigate();
-    const {logoutHandler} = useContext(AuthContext);
+    const { logoutHandler, isUserLogged } = useContext(AuthContext);
 
     useEffect(() => {
-        authService.logout()
-        .then(() => {
-            logoutHandler();
-            navigate(Path.Home);
-        })
-        .catch(() => navigate(Path.Home));
+
+        if (isUserLogged) {
+            authService.logout()
+            // .then(() => {
+            //     logoutHandler();
+            //     navigate(Path.Home);
+            // })
+            // .catch(() => {
+            //     logoutHandler();
+            //     navigate(Path.Home);
+            // });
+        }
+        logoutHandler();
+        navigate(Path.Home);
+
     }, []);
 
     return null;

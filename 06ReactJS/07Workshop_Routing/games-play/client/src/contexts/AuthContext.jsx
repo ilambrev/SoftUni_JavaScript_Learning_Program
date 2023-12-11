@@ -37,6 +37,10 @@ export const AuthProvider = ({ children, }) => {
         localStorage.removeItem('accessToken');
     };
 
+    const isUserLogged = () => {
+        return Object.keys(auth).length > 0;
+    }
+
     const values = {
         loginSubmitHandler,
         registerSubmitHandler,

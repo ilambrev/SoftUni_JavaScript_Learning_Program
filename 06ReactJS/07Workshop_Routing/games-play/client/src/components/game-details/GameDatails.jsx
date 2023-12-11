@@ -55,6 +55,11 @@ export default function GameDetails() {
         values.comment = commentFormInitialState.comment;
     };
 
+    // For Error Boundary demo
+    if (Math.random() < 0.5) {
+        throw new Error('Game details error!');
+    }
+
     return (
 
         <section id="game-details">
