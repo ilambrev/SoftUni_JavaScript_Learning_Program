@@ -14,6 +14,7 @@ import Logout from "./components/logout/Logout";
 import GameEdit from "./components/game-edit/GameEdit";
 import ErrorBoundary from "./components/ErrorBoundary";
 import AuthGuard from "./components/guards/AuthGuard";
+import AuthGuardOutlet from "./components/guards/AuthGuardOutlet";
 
 function App() {
 
@@ -29,10 +30,15 @@ function App() {
                         <Route path={Path.Games} element={<GameList />} />
                         <Route path={Path.Game} element={<GameDetails />} />
                         <Route path={Path.GameCreate} element={<AuthGuard><GameCreate /></AuthGuard>} />
-                        <Route path={Path.GameEdit} element={<GameEdit />} />
+
                         <Route path={Path.Register} element={<Register />} />
                         <Route path={Path.Login} element={<Login />} />
-                        <Route path={Path.Logout} element={<Logout />} />
+
+
+                        <Route element={<AuthGuardOutlet />}>
+                            <Route path={Path.GameEdit} element={<GameEdit />} />
+                            <Route path={Path.Logout} element={<Logout />} />
+                        </Route>
 
                     </Routes>
 

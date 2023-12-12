@@ -56,7 +56,7 @@ export default function GameDetails() {
     };
 
     // For Error Boundary demo
-    if (Math.random() < 0.5) {
+    if (Math.random() < 0.5 && gameId === 'ca24afe4-ff6d-47e4-93aa-efa301ec2d07') {
         throw new Error('Game details error!');
     }
 
