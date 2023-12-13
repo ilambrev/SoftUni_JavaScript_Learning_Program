@@ -14,6 +14,19 @@ export const getOne = async (gameId) => {
     return result;
 };
 
+export const getLatest = async () => {
+    // let query = new URLSearchParams({
+    //     sortBy: `_createdOn%20desc`,
+    //     offset: 0,
+    //     pageSize: 3,
+    // });
+
+    // const result = await request.get(`${BASE_URL}?${query}`);
+    const result = await request.get(`${BASE_URL}?sortBy=_createdOn%20desc&offset=0&pageSize=3`);
+    
+    return result;
+};
+
 export const create = async (gameData) => {
     const result = await request.post(BASE_URL, gameData);
 
