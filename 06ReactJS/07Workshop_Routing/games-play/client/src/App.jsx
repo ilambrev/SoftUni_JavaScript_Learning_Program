@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import { AuthProvider } from "./contexts/AuthContext";
@@ -9,12 +10,13 @@ import GameList from "./components/game-list/GameList";
 import GameCreate from "./components/game-create/GameCreate";
 import Login from "./components/login/Login";
 import Register from "./components/register/Register";
-import GameDetails from "./components/game-details/GameDatails";
+// import GameDetails from "./components/game-details/GameDatails";
 import Logout from "./components/logout/Logout";
 import GameEdit from "./components/game-edit/GameEdit";
 import ErrorBoundary from "./components/ErrorBoundary";
 import AuthGuard from "./components/guards/AuthGuard";
 import AuthGuardOutlet from "./components/guards/AuthGuardOutlet";
+const GameDetails = lazy(() => import("./components/game-details/GameDatails"));
 
 function App() {
 
@@ -24,23 +26,27 @@ function App() {
                 <div id="box">
                     <Header />
 
-                    <Routes>
+                    <Suspense fallback={<h1>Loading...</h1>}>
 
-                        <Route path={Path.Home} element={<Home />} />
-                        <Route path={Path.Games} element={<GameList />} />
-                        <Route path={Path.Game} element={<GameDetails />} />
-                        <Route path={Path.GameCreate} element={<AuthGuard><GameCreate /></AuthGuard>} />
+                        <Routes>
 
-                        <Route path={Path.Register} element={<Register />} />
-                        <Route path={Path.Login} element={<Login />} />
+                            <Route path={Path.Home} element={<Home />} />
+                            <Route path={Path.Games} element={<GameList />} />
+                            <Route path={Path.Game} element={<GameDetails />} />
+                            <Route path={Path.GameCreate} element={<AuthGuard><GameCreate /></AuthGuard>} />
+
+                            <Route path={Path.Register} element={<Register />} />
+                            <Route path={Path.Login} element={<Login />} />
 
 
-                        <Route element={<AuthGuardOutlet />}>
-                            <Route path={Path.GameEdit} element={<GameEdit />} />
-                            <Route path={Path.Logout} element={<Logout />} />
-                        </Route>
+                            <Route element={<AuthGuardOutlet />}>
+                                <Route path={Path.GameEdit} element={<GameEdit />} />
+                                <Route path={Path.Logout} element={<Logout />} />
+                            </Route>
 
-                    </Routes>
+                        </Routes>
+
+                    </Suspense>
 
                 </div>
             </AuthProvider>
