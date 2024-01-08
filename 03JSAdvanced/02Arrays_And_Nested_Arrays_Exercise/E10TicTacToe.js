@@ -26,7 +26,7 @@ function ticTacToe(input) {
 
         dashboard[row][col] = currentPlayerMark;
 
-        if (checkForWinningCombination()) {
+        if (winningCombinationExists()) {
             winner = currentPlayerMark;
             break;
         }
@@ -36,7 +36,7 @@ function ticTacToe(input) {
         }
     }
 
-    function checkForWinningCombination() {
+    function winningCombinationExists() {
         const row1 = dashboard[0][0] + dashboard[0][1] + dashboard[0][2];
         const row2 = dashboard[1][0] + dashboard[1][1] + dashboard[1][2];
         const row3 = dashboard[2][0] + dashboard[2][1] + dashboard[2][2];
