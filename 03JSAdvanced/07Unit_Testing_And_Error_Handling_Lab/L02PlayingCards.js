@@ -8,7 +8,7 @@ function playingCards(face, suit) {
         C: '\u2663',
     }
 
-    if (face !== face.toUpperCase() || suit !== suit.toUpperCase() || !faces.includes(face)) {
+    if (face !== face.toUpperCase() || suit !== suit.toUpperCase() || !faces.includes(face) || !suits.hasOwnProperty(suit)) {
         return 'Error';
     }
 
