@@ -1,0 +1,16 @@
+{
+  "name": "07unit_testing_and_error_handling_exercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./*.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.4.1",
+    "mocha": "^9.2.2"
+  }
+}
