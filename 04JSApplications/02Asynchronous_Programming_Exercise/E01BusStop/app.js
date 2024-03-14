@@ -21,6 +21,6 @@ function getInfo() {
             stopId.value = '';
         })
         .catch(err => {
-            stopNameContainer.textContent = 'Error'
+            stopNameContainer.textContent = 'Error';
         });
 }
