@@ -4,30 +4,26 @@ function solve() {
     const arriveButton = document.querySelector('#arrive');
 
     const baseUrl = 'http://localhost:3030/jsonstore/bus/schedule/';
-    let currentBusStopId = 'depot1';
-    let currentBusStopName = '';
-    let nextBusStopId = '';
+    let busStop = { next: 'depot' };
 
     function depart() {
-        fetch(`${baseUrl}${currentBusStopId}`)
+        departButton.disabled = true;
+
+        fetch(`${baseUrl}${busStop.next}`)
             .then(res => res.json())
-            .then(busStop => {
+            .then(stop => {
+                busStop = stop;
                 infoContainer.textContent = `Next stop ${busStop.name}`;
-                currentBusStopName = busStop.name;
-                nextBusStopId = busStop.next;
-                departButton.disabled = true;
                 arriveButton.disabled = false;
             })
             .catch(err => {
                 infoContainer.textContent = 'Error';
-                departButton.disabled = true;
                 arriveButton.disabled = true;
             });
     }
 
     function arrive() {
-        infoContainer.textContent = `Arriving at ${currentBusStopName}`;
-        currentBusStopId = nextBusStopId;
+        infoContainer.textContent = `Arriving at ${busStop.name}`;
         departButton.disabled = false;
         arriveButton.disabled = true;
     }
