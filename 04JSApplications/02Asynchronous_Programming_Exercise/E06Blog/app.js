@@ -1,5 +1,5 @@
 // Judge 100/100 result
-// Solution withot making GET request by post ID to obtain data for selected post
+// Solution without making GET request by post ID to obtain data for selected post
 
 function attachEvents() {
     const baseUrl = 'http://localhost:3030/jsonstore/blog';
