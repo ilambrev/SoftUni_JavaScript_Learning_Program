@@ -55,6 +55,11 @@ function attachEvents() {
                     phone,
                 }),
             });
+
+            personNameInput.value = '';
+            phoneNumberInput.value = '';
+
+            loadAllPhonebookEntries();
         } catch (err) {
             console.log(err);
         }
