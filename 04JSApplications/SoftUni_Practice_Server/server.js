@@ -93,7 +93,7 @@
             // NOTE: the OPTIONS method results in undefined result and also it never processes plugins - keep this in mind
             if (method == 'OPTIONS') {
                 Object.assign(headers, {
-                    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+                    'Access-Control-Allow-Methods': 'GET, POST, PUT, PATCH, DELETE, OPTIONS',
                     'Access-Control-Allow-Credentials': false,
                     'Access-Control-Max-Age': '86400',
                     'Access-Control-Allow-Headers': 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept, X-Authorization, X-Admin'
@@ -1530,6 +1530,24 @@
     		}
     	},
     	furniture: {
+            "344bece9-d4a4-4df5-9195-046f918690c4": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "img": "https://www.ikea.com/PIAimages/0447583_PE597395_S5.JPG",
+                "name": "Sofa",
+                "price": "259",
+                "decFactor": "0.4",
+                "_createdOn": 1711125431111,
+                "_id": "344bece9-d4a4-4df5-9195-046f918690c4"
+            },
+            "6931a251-8a85-4880-b610-7bbb28669b8b": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "img": "https://www.stylespafurniture.com/wp-content/uploads/2020/03/Cove_3_Door_Wardrobe_1.jpg",
+                "name": "Wardrobe",
+                "price": "120",
+                "decFactor": "1.2",
+                "_createdOn": 1711125581708,
+                "_id": "6931a251-8a85-4880-b610-7bbb28669b8b"
+            }
     	},
     	orders: {
     	},
