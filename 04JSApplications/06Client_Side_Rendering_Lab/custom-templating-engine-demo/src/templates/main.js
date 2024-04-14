@@ -3,7 +3,7 @@ import contactListTemplate from "./contactList.js";
 
 const mainTemplate = (data) => `
     <header>
-        ${navbarTemplate}
+        ${navbarTemplate()}
     </header>
     <main>
         ${contactListTemplate(data.contacts)}

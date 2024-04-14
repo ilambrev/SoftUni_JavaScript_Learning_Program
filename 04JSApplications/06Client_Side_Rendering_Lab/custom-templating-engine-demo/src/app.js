@@ -10,12 +10,20 @@ render(mainTemplate({ contacts }), rootElement);
 
 // Used only for demo
 window.addContact = function () {
+    const contactInfo = prompt("Enter new contact data in format name/phone number:", "");
+
+    if (contactInfo == null || contactInfo == "") {
+        return;
+    }
+
+    const [person, phone] = contactInfo.split('/');
+
     fetch('http://localhost:3030/jsonstore/phonebook', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ person: 'Ivan', phone: '+1-555-7635' })
+        body: JSON.stringify({ person, phone })
     })
         .then(res => res.json())
         .then(contact => {
