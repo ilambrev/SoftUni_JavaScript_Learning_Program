@@ -1,0 +1,32 @@
+{
+  "670f9411-257d-4f0e-92a5-984156a1b22d": {
+      "title": "Why enterprises rely on JavaScript, Python, and Java",
+      "content": "Three programming languages have remained the top choices for developers for nearly 30 years, and will for the foreseeable future.\n\nDespite advances in cloud computing, mobile development, and AI, the day-to-day business of enterprises around the world still runs on three programming languages that made their debut in the 1990s. In nearly every ranking system, JavaScript, Python, and Java appear near the top of the most popular languages.\n\nIn GitHub’s yearly State of the Octoverse report, the programming trifecta has held three of the top four spots every year since 2014. Why have these programming powerhouses remained the top choices for developers for nearly 30 years, with no sign of anything knocking them from their perch?",
+      "author": "Simon Ritter ",
+      "_id": "670f9411-257d-4f0e-92a5-984156a1b22d"
+  },
+  "2b6af34f-3480-4b66-bf00-235a76e1db3e": {
+      "title": "How to choose the right database for your application",
+      "content": "From performance to programmability, the right database makes all the difference. Here are 13 key questions to guide your selection.\n\nPicking the “right” database can often be critical to the success of an application. Rather than taking the advice of vendors or using a database because you already happen to have it, it’s useful to consider the fundamental purpose and requirements of the data store.",
+      "author": "Martin Heller",
+      "_id": "2b6af34f-3480-4b66-bf00-235a76e1db3e"
+  },
+  "3a65e505-0b78-484c-8d77-ea854c3b0537": {
+      "title": "Frequently sought solutions for JavaScript",
+      "content": "You have questions, and we have answers. Here are 10 things newer developers often don't know how to do with JavaScript, with tips and code to help you figure it out.\n\nYou’ve heard of the FAQ, which is typically a list of frequently asked questions on some topic or another. A twist on that idea, the FSS—for frequently sought solutions—lists solutions to some of the most common pleas for help. These tend to go beyond “newbie” questions and address real-life issues that bedevil programmers.",
+      "author": "Matthew Tyson",
+      "_id": "3a65e505-0b78-484c-8d77-ea854c3b0537"
+  },
+  "f437999e-0c1a-415f-b4ae-d768691606b4": {
+      "title": "User-defined variables in JavaScript",
+      "content": "JavaScript variables hold a wide variety of information and can be used with virtually any data type. Here's how to use variables to store numbers, text strings, objects, and more.\n\nWithout variables, programming languages are next to useless. Fortunately, JavaScript’s variable system is incredibly powerful and versatile. This article shows you how to use JavaScript variables to store numbers, text strings, objects, and other data types. Once you’ve stored this information, you can use it anywhere in your program.",
+      "author": "Matthew Tyson",
+      "_id": "f437999e-0c1a-415f-b4ae-d768691606b4"
+  },
+  "40245747-0c14-4d61-bd90-e76965632a46": {
+      "title": "How to use typesafe enums in Java",
+      "content": "Typesafe enums offer a better alternative to Java's traditional enumerated types. Here's how to use typesafe enums correctly in your Java code.\n\nThis article introduces you to the difference between enumerated types and typesafe enums. You will learn how to declare a typesafe enum and use it in a switch statement, and you’ll see how to customize a typesafe enum by adding data and behaviors. We’ll also take a look at java.lang.Enum<E extends Enum<E>>, which is the base class for all typesafe enums.",
+      "author": "Jeff Friesen",
+      "_id": "40245747-0c14-4d61-bd90-e76965632a46"
+  }
+}
