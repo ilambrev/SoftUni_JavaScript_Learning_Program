@@ -9,7 +9,6 @@ function radioCrystals(data) {
     };
 
     const targetThickness = data[0];
-    let xRayPerformed = false;
 
     for (let i = 1; i < data.length; i++) {
         console.log(`Processing chunk ${data[i]} microns`);
