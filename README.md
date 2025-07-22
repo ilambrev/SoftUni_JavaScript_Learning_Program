@@ -1,4 +1,4 @@
-# JS Web Developer
-**_SoftUni Software Engineering Program_**
+# Software Engineer With JavaScript
+**_SoftUni Professional Program_**
 
-This repository contains my solutions to the tasks that are part of the JS Web Developer software program.
+This repository contains my solutions to the tasks that are part of the Software Engineer With JavaScript professional program.
